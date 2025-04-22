@@ -13,7 +13,7 @@ class MainMenuStateNew extends TitleState
   var sprite:FlxSprite;
   override function create():void
 
-    super.create();
+    create();
     
     sprite = new.FlxSprite();
     sprite.makeGraphic(300, 300, flixel.util.FlxColor.WHITE);
