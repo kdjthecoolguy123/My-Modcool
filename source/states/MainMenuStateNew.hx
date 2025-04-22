@@ -10,16 +10,13 @@ class MainMenuStateNew extends TitleState
 
 {
 
-  override function create():void
-    
-		logo = new FlxSprite(0, 0).loadGraphic(Paths.image('loading_screen/icon'));
-		logo.antialiasing = ClientPrefs.data.antialiasing;
-		logo.scale.set(0.75, 0.75);
-		logo.updateHitbox();
-		logo.screenCenter();
-		logo.x -= 50;
-		logo.y -= 40;
-		add(logo);
+  override function create()
+
+	var fnfVer:FlxText = new FlxText(12, FlxG.height - 24, 0, "Crazy Funker's v1.5 [Dev Build]", 12);
+	fnfVer.scrollFactor.set();
+	fnfVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+	add(fnfVer);
+	changeItem();
     
 }
 
