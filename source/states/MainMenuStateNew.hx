@@ -12,8 +12,12 @@ class MainMenuStateNew extends TitleState
 
   override function create()
 
+    {
+
 	var fnfVer:FlxText = new FlxText(12, FlxG.height - 400, 400, "[TEST]", 12);
 	add(fnfVer);
+
+    }
     
 }
 
