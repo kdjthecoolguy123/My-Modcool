@@ -13,12 +13,14 @@ class MainMenuStateNew extends TitleState
   var sprite:FlxSprite;
   override function create():void
     
-    sprite = new.FlxSprite();
-    sprite.makeGraphic(300, 300, flixel.util.FlxColor.WHITE);
-    sprite.x = 200
-    sprite.y = 200
+    lol = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
+		lol.visible = false;
+		lol.setGraphicSize(Std.int(lol.width * 0.8));
+		lol.updateHitbox();
+		lol.screenCenter(X);
+		lol.antialiasing = ClientPrefs.data.antialiasing;
 
-    add(sprite);
+    add(lol);
     
 }
 
