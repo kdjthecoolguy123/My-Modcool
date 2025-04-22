@@ -10,7 +10,7 @@ class MainMenuStateNew extends TitleState
 {
 
   var sprite:FlxSprite;
-  override pubblic function create():void
+  override function create():void
   {
 
     super.create();
