@@ -7,11 +7,11 @@ import states.editors.MasterEditorMenu;
 import options.OptionsState;
 
 class MainMenuStateNew extends TitleState
+
 {
 
   var sprite:FlxSprite;
   override function create():void
-  {
 
     super.create();
     
@@ -22,7 +22,6 @@ class MainMenuStateNew extends TitleState
 
     add(sprite);
     
-  }
 
 }
 
