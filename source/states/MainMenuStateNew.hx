@@ -10,7 +10,7 @@ class MainMenuStateNew extends TitleState
 
 {
 
-  var sprite:FlxSprite;
+  var lol:FlxSprite;
   override function create():void
     
     lol = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
