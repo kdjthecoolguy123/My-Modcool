@@ -15,10 +15,14 @@ class MainMenuStateNew extends TitleState
   {
 
     super.create();
+    
     sprite = new.FlxSprite();
     sprite.makeGraphic(300, 300, flixel.util.FlxColor.WHITE);
-    
+    sprite.x = 200
+    sprite.y = 200
 
+    add(sprite);
+    
   }
 
 }
