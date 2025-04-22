@@ -1,10 +1,10 @@
 package states;
 
-import.flixel.FlxSprite;
-import.flixel.FlxState;
-import.flixel.text.FlxText;
-import.flixel.ui.FlxButton;
-import.flixel.ui.FlxMath;
+import flixel.FlxObject;
+import flixel.effects.FlxFlicker;
+import lime.app.Application;
+import states.editors.MasterEditorMenu;
+import options.OptionsState;
 
 class MainMenuStateNew extends TitleState
 {
