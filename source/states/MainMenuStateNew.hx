@@ -17,7 +17,7 @@ class MainMenuStateNew extends TitleState
   override function create()
 
     {
-	lol = new FlxSprite().loadGraphic(Paths.image(menuDesat));
+	lol = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
 	add(lol);
 
 	var fnfVer:FlxText = new FlxText(12, FlxG.height - 400, 400, "[TEST]", 12);
