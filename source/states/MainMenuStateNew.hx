@@ -9,9 +9,10 @@ import options.OptionsState;
 
 class MainMenuStateNew extends TitleState
 
-	var lol:FlxSprite;
 
 {
+
+	var lol:FlxSprite;
 
   override function create()
 
