@@ -8,12 +8,11 @@ import states.editors.MasterEditorMenu;
 import options.OptionsState;
 
 class MainMenuStateNew extends TitleState
-
-
 {
 	
 	var background:FlxSprite;
 	var button:FlxSprite;
+	var chapterSelect:Int = 0
 
   override function create()
 
@@ -27,6 +26,19 @@ class MainMenuStateNew extends TitleState
 	add(fnfVer);
 
     }
+
+	public function new() {
+        super();
+        stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+    }
+
+    function onKeyDown(event:KeyboardEvent):Void {
+        if (event.keyCode == Keyboard.RIGHT) {
+            chapterSelect++;
+            trace(chapterSelect);
+        }
+    }
+}
     
 }
 
