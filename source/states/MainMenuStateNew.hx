@@ -12,7 +12,8 @@ class MainMenuStateNew extends TitleState
 	
 	var background:FlxSprite;
 	var button:FlxSprite;
-	var chapterSelect:Int = 0
+	var chapterSelect:Int = 0;
+	var fnfVer:FlxText;
 
   override function create()
 
@@ -24,8 +25,20 @@ class MainMenuStateNew extends TitleState
 
 	var fnfVer:FlxText = new FlxText(12, FlxG.height - 400, 0, "[TEST]", 12);
 	add(fnfVer);
-
     }
+	
+	override function update(elapsed:Float)
+    {
+        super.update(elapsed);
+
+        if (FlxG.keys.justPressed.RIGHT)
+        {
+            chapterSelect++;
+        }
+		fnfVer.text = "Chapter: " + chapterSelect;
+    }
+
+	
  
 }
 
