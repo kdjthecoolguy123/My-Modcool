@@ -18,7 +18,7 @@ class MainMenuStateNew extends TitleState
 
     {
 	background = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
-	add(lol);
+	add(background);
 
 	var fnfVer:FlxText = new FlxText(12, FlxG.height - 400, 400, "[TEST]", 12);
 	add(fnfVer);
