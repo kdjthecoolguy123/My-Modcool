@@ -9,7 +9,7 @@ import options.OptionsState;
 
 class MainMenuStateNew extends TitleState
 {
-	public static var updateVer:String = '1.5'
+	public static var updateVer:String = '1.5';
 
 	var background:FlxSprite;
 	var button:FlxSprite;
