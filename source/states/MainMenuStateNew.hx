@@ -28,11 +28,11 @@ class MainMenuStateNew extends TitleState
 		//
 
 		storyMode_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('go'));
-		storyMode_button.setPosition(0, 200)
+		storyMode_button.setPosition(0, 200);
 		add(storyMode_button);
 
 		freeplay_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('go'));
-		freeplay_button.setPosition(500, 200)
+		freeplay_button.setPosition(500, 200);
 		add(freeplay_button);
 
 		var fnfVer:FlxText = new FlxText(12, FlxG.height - 400, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
