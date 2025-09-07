@@ -3,7 +3,8 @@ package states;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.effects.FlxFlicker;
-import flixel.FlxGKeys;
+import flixel.FlxG;
+import flixel.text.FlxText;
 import lime.app.Application;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
@@ -15,7 +16,6 @@ class MainMenuStateNew extends TitleState
 	var background:FlxSprite;
 	var button:FlxSprite;
 	var chapterSelect:Int = 1;
-	var fnfVer:FlxText;
 
   	override function create() {
 
@@ -30,10 +30,10 @@ class MainMenuStateNew extends TitleState
 
     }
 
-	override function update() {
+	override function update(elapsed: Float) {
 
-		super.update();
-		if (FlxGKeys.JustPressed.RIGHT) {
+		super.update(elapsed);
+		if (FlxG.keys.justPressed.RIGHT) {
 			MusicBeatState.switchState(new StoryMenuState());
 		}
 		
