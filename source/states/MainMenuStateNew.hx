@@ -16,6 +16,7 @@ class MainMenuStateNew extends TitleState
 	var background:FlxSprite;
 	var button:FlxSprite;
 	var chapterSelect:Int = 1;
+	var allowMouse:Bool = true;
 
   	override function create() {
 
