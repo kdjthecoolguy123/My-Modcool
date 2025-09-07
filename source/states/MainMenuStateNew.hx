@@ -14,16 +14,25 @@ class MainMenuStateNew extends TitleState
 	public static var updateVer:String = '1.5';
 
 	var background:FlxSprite;
+	var charactersBG:FlxSprite;
+
 	var storyMode_button:FlxSprite;
 	var freeplay_button:FlxSprite;
+
 	var chapterSelect:Int = 1;
 	var allowMouse:Bool = true;
 
   	override function create() {
 
+		FlxG.mouse.show();
+
 		background = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('menuBG'));
 		background.screenCenter();
 		add(background);
+
+		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('charactersBG'));
+		charactersBG.screenCenter();
+		add(charactersBG);
 
 		//
 
@@ -35,7 +44,7 @@ class MainMenuStateNew extends TitleState
 		freeplay_button.setPosition(500, 200);
 		add(freeplay_button);
 
-		var fnfVer:FlxText = new FlxText(12, FlxG.height - 400, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
+		var fnfVer:FlxText = new FlxText(12, 12, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
 		add(fnfVer);
 
     }
