@@ -26,25 +26,6 @@ class MainMenuStateNew extends TitleState
 	var fnfVer:FlxText = new FlxText(12, FlxG.height - 400, 0, "[TEST]", 12);
 	add(fnfVer);
     }
-	
-	override function update(elapsed:Float)
-    {
-        super.update(elapsed);
-
-        if (FlxG.keys.justPressed.RIGHT)
-        {
-            chapterSelect++;
-        }
-
-		if (chapterSelect >= 4)
-		{
-			var chapterSelect;Int = 1
-		}
-		
-		fnfVer.text = "Chapter: " + chapterSelect;
-    }
-
-	
- 
+	 
 }
 
