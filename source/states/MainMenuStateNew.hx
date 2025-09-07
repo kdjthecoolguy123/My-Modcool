@@ -32,9 +32,8 @@ class MainMenuStateNew extends TitleState
 
 	override function update(elapsed: Float) {
 
-		super.update(elapsed);
-		if (FlxG.keys.justPressed.RIGHT) {
-			MusicBeatState.switchState(new StoryMenuState());
+		if (FlxG.mouse.pressed() && button.overlapsPoint(FlxG.mouse.screenX, FlxG.mouse.screenY)) {
+    		MusicBeatState.switchState(new StoryMenuState());
 		}
 		
 	}
