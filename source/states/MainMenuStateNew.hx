@@ -9,7 +9,8 @@ import options.OptionsState;
 
 class MainMenuStateNew extends TitleState
 {
-	
+	public static var updateVer:String = '1.5'
+
 	var background:FlxSprite;
 	var button:FlxSprite;
 	var chapterSelect:Int = 1;
@@ -19,11 +20,12 @@ class MainMenuStateNew extends TitleState
 
     {
 	background = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('menuBG'));
+	background.screenCenter();
 	add(background);
 	button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('go'));
 	add(button);
 
-	var fnfVer:FlxText = new FlxText(12, FlxG.height - 400, 0, "[TEST]", 12);
+	var fnfVer:FlxText = new FlxText(12, FlxG.height - 400, 0, "Crazy Funker's" + updateVer, 12);
 	add(fnfVer);
     }
 	 
