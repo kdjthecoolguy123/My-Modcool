@@ -16,7 +16,7 @@ import openfl.display.BitmapData;
 import shaders.ColorSwap;
 
 import states.StoryMenuState;
-import states.MainMenuState;
+import states.MainMenuStateNew;
 
 typedef TitleData =
 {
