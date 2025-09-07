@@ -16,9 +16,8 @@ class MainMenuStateNew extends TitleState
 	var chapterSelect:Int = 1;
 	var fnfVer:FlxText;
 
-  	override function create()
+  	override function create() {
 
-    {
 		background = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('menuBG'));
 		background.screenCenter();
 		add(background);
@@ -27,20 +26,16 @@ class MainMenuStateNew extends TitleState
 
 		var fnfVer:FlxText = new FlxText(12, FlxG.height - 400, 0, "Crazy Funker's" + updateVer, 12);
 		add(fnfVer);
+
     }
 
-	public function increase() 	
-	{
-		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+	function update() {
+		super.update();
+		if (FlxGKeys.JustPressed.RIGHT) {
+			MusicBeatState.switchState(new StoryMenuState());
+		}
+		
 	}
-
-  	function onKeyDown(event:KeyboardEvent):Void 
-	{
-        if (event.keyCode == keyboard.DOWN) 
-		{
-            chapterSelect++;
-        }
-    }
 	 
 }
 
