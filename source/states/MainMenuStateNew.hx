@@ -38,7 +38,7 @@ class MainMenuStateNew extends TitleState
 
 		if (chapterSelect >= 4)
 		{
-			var chapterSelect;Int = 1
+			var chapterSelect;Int = 1;
 		}
 		
 		fnfVer.text = "Chapter: " + chapterSelect;
