@@ -24,7 +24,7 @@ class MainMenuStateNew extends TitleState
 
   	override function create() {
 
-		FlxG.mouse.show();
+		FlxG.mouse.visible = true;
 
 		background = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('menuBG'));
 		background.screenCenter();
