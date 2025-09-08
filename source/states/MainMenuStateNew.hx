@@ -33,12 +33,12 @@ class MainMenuStateNew extends TitleState
 		background.screenCenter();
 		add(background);
 
-		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("charactersBG"));
+		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG"));
 		charactersBG.setPosition(0, FlxG.height - charactersBG.height);
 		add(charactersBG);
 
-		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("charactersBG"));
-		charactersBG_2.setPosition(charactersBG.width * 2, FlxG.height - charactersBG_2.height);
+		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG_2"));
+		charactersBG_2.setPosition(charactersBG.width, FlxG.height - charactersBG_2.height);
 		add(charactersBG_2);
 
 		//
@@ -76,19 +76,16 @@ class MainMenuStateNew extends TitleState
 
 		if (FlxG.mouse.justPressed && storyMode_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
 			FlxG.sound.play(Paths.sound("confirmMenu"));
-			FlxFlicker.flicker(charactersBG, 1.1, 0.15, true);
+			FlxFlicker.flicker(charactersBG, 1.1, 0.15, true, function(_));
     		MusicBeatState.switchState(new StoryMenuState());
 		}
 
 		if (FlxG.mouse.justPressed && freeplay_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
 			FlxG.mouse.visible = false;
 			FlxG.sound.play(Paths.sound("confirmMenu"));
-			FlxFlicker.flicker(charactersBG_2, 1.1, 0.15, true);
+			FlxFlicker.flicker(charactersBG_2, 1.1, 0.15, true, function(_));
     		MusicBeatState.switchState(new FreeplayState());
 		}
-
-		trace("charactersBG.x: " + charactersBG.x);
-		trace("charactersBG_2.x: " + charactersBG_2.x); 
 		
 	}
 	 
