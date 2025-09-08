@@ -34,11 +34,11 @@ class MainMenuStateNew extends TitleState
 		add(background);
 
 		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('charactersBG'));
-		charactersBG.setPosition(Flx.width, FlxG.height - charactersBG.height);
+		charactersBG.setPosition(FlxG.width, FlxG.height - charactersBG.height);
 		add(charactersBG);
 
 		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('charactersBG'));
-		charactersBG_2.setPosition(Flx.width * 2, FlxG.height - charactersBG_2.height);
+		charactersBG_2.setPosition(FlxG.width * 2, FlxG.height - charactersBG_2.height);
 		add(charactersBG_2);
 
 		//
