@@ -12,7 +12,7 @@ import options.OptionsState;
 
 class MainMenuStateNew extends TitleState
 {
-	public static var updateVer:String = '1.5';
+	public static var updateVer:String = "1.5";
 
 	var background:FlxSprite;
 	var charactersBG:FlxSprite;
@@ -29,29 +29,29 @@ class MainMenuStateNew extends TitleState
 
 		FlxG.mouse.visible = true;
 
-		background = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('menuBG'));
+		background = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("menuBG"));
 		background.screenCenter();
 		add(background);
 
-		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('charactersBG'));
+		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("charactersBG"));
 		charactersBG.setPosition(FlxG.width, FlxG.height - charactersBG.height);
 		add(charactersBG);
 
-		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('charactersBG'));
+		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("charactersBG"));
 		charactersBG_2.setPosition(FlxG.width * 2, FlxG.height - charactersBG_2.height);
 		add(charactersBG_2);
 
 		//
 
-		storyMode_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('go'));
+		storyMode_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("go"));
 		storyMode_button.setPosition(0, 200);
 		add(storyMode_button);
 
-		freeplay_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('go'));
+		freeplay_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("go"));
 		freeplay_button.setPosition(500, 200);
 		add(freeplay_button);
 
-		var fnfVer:FlxText = new FlxText(12, 12, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
+		var fnfVer:FlxText = new FlxText(12, FlxG.height, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
 		add(fnfVer);
 
     }
@@ -75,17 +75,20 @@ class MainMenuStateNew extends TitleState
 		// buttons here
 
 		if (FlxG.mouse.justPressed && storyMode_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
-			FlxG.sound.play(Paths.sound('confirmMenu'));
-			FlxFlicker.flicker(charactersBG, 1.1, 0.15, function(flick:FlxFlicker));
+			FlxG.sound.play(Paths.sound("confirmMenu"));
+			FlxFlicker.flicker(charactersBG, 1.1, 0.15, function(_));
     		MusicBeatState.switchState(new StoryMenuState());
 		}
 
 		if (FlxG.mouse.justPressed && freeplay_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
 			FlxG.mouse.visible = false;
-			FlxG.sound.play(Paths.sound('confirmMenu'));
-			FlxFlicker.flicker(charactersBG_2, 1.1, 0.15, function(flick:FlxFlicker));
+			FlxG.sound.play(Paths.sound("confirmMenu"));
+			FlxFlicker.flicker(charactersBG_2, 1.1, 0.15, function(_));
     		MusicBeatState.switchState(new FreeplayState());
 		}
+
+		trace("charactersBG.x: " + charactersBG.x);
+		trace("charactersBG_2.x: " + charactersBG_2.x); 
 		
 	}
 	 
