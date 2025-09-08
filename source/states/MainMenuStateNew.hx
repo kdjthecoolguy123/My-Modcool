@@ -17,7 +17,7 @@ class MainMenuStateNew extends TitleState
 	var background:FlxSprite;
 	var charactersBG:FlxSprite;
 	var charactersBG_2:FlxSprite;
-	var characterSpeed:Float = 10;
+	var characterSpeed:Float = 35;
 
 	var storyMode_button:FlxSprite;
 	var freeplay_button:FlxSprite;
