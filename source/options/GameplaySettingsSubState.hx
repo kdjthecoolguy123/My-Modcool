@@ -14,6 +14,12 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			BOOL); //Variable type
 		addOption(option);
 
+		var option:Option = new Option('Modcharts',
+			'If unchecked, song modcharts will not be applied during gameplay.',
+			'modcharts_Allowed',
+			BOOL);
+		addOption(option);
+
 		var option:Option = new Option('Middlescroll',
 			'If checked, your notes get centered.',
 			'middleScroll',
