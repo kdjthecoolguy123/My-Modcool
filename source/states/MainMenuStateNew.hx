@@ -76,14 +76,14 @@ class MainMenuStateNew extends TitleState
 
 		if (FlxG.mouse.justPressed && storyMode_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
 			FlxG.sound.play(Paths.sound('confirmMenu'));
-			FlxFlicker.flicker(charactersBG, 1.1, 0.15);
+			FlxFlicker.flicker(charactersBG, 1.1, 0.15, function(flick:FlxFlicker));
     		MusicBeatState.switchState(new StoryMenuState());
 		}
 
 		if (FlxG.mouse.justPressed && freeplay_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
 			FlxG.mouse.visible = false;
 			FlxG.sound.play(Paths.sound('confirmMenu'));
-			FlxFlicker.flicker(charactersBG_2, 1.1, 0.15);
+			FlxFlicker.flicker(charactersBG_2, 1.1, 0.15, function(flick:FlxFlicker));
     		MusicBeatState.switchState(new FreeplayState());
 		}
 		
