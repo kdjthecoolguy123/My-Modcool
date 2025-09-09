@@ -25,6 +25,7 @@ class ChapterSelect extends MusicBeatState
         FlxG.mouse.visible = true;
 
         bg = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("backgrounds/menuDesat"));
+        bg.antialiasing = ClientPrefs.data.antialiasing;
 	    bg.screenCenter();
 	    add(bg);
 
@@ -51,11 +52,11 @@ class ChapterSelect extends MusicBeatState
         //
         
         var blackBox = new FlxSprite(0, 0);
-        blackBox.makeGraphic(FlxG.width, 25, FlxColor.BLACK);
+        blackBox.makeGraphic(FlxG.width, 100, FlxColor.BLACK);
         blackBox.alpha = 0.6;
         add(blackBox);
 
-        var instructions:FlxText = new FlxText(0, 6, 0, "Selected a Chapter with your mouse!", 26);
+        var instructions:FlxText = new FlxText(0, 6, 0, "Selected a Chapter with your mouse!", 70);
 		instructions.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
         instructions.screenCenter(X);
 		add(instructions);

@@ -34,6 +34,7 @@ class MainMenuStateNew extends MusicBeatState
 		// Background code
 
 		bg = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("backgrounds/menuDesat"));
+		bg.antialiasing = ClientPrefs.data.antialiasing;
 		bg.screenCenter();
 		add(bg);
 
@@ -54,10 +55,12 @@ class MainMenuStateNew extends MusicBeatState
 		}
 
 		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG"));
+		charactersBG.antialiasing = ClientPrefs.data.antialiasing;
 		charactersBG.setPosition(0, FlxG.height - charactersBG.height);
 		add(charactersBG);
 
 		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG_2"));
+		charactersBG_2.antialiasing = ClientPrefs.data.antialiasing;
 		charactersBG_2.setPosition(charactersBG.width, FlxG.height - charactersBG_2.height);
 		add(charactersBG_2);
 

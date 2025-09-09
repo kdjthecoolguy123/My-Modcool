@@ -41,6 +41,7 @@ class FreeplayState extends MusicBeatState
 	private var iconArray:Array<HealthIcon> = [];
 
 	var bg:FlxSprite;
+	var bgImage:Int = FlxG.random.int(1, 4);
 	var intendedColor:Int;
 
 	var missingTextBG:FlxSprite;
@@ -103,11 +104,26 @@ class FreeplayState extends MusicBeatState
 		}
 		Mods.loadTopMod();
 
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("backgrounds/menuDesat"));
 		bg.antialiasing = ClientPrefs.data.antialiasing;
-		add(bg);
-		bg.screenCenter();
+	    bg.screenCenter();
+	    add(bg);
 
+        if (bgImage == 1) {
+    		bg.loadGraphic(Paths.image("backgrounds/menuDesat"));
+		}
+
+		if (bgImage == 2) {
+    		bg.loadGraphic(Paths.image("backgrounds/menuBG"));
+		}
+
+		if (bgImage == 3) {
+    		bg.loadGraphic(Paths.image("backgrounds/menuBGMagenta"));
+		}
+
+		if (bgImage == 4) {
+    		bg.loadGraphic(Paths.image("backgrounds/menuBGBlue"));
+		}
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
 
