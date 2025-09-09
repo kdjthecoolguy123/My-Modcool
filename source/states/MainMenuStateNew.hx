@@ -16,6 +16,7 @@ class MainMenuStateNew extends MusicBeatState
 	public static var updateVer:String = "1.5";
 
 	var bg:FlxSprite;
+	var bgImage:Int = FlxG.random.int(1, 4);
 	var charactersBG:FlxSprite;
 	var charactersBG_2:FlxSprite;
 	var characterSpeed:Float = 35;
@@ -30,9 +31,27 @@ class MainMenuStateNew extends MusicBeatState
 
 		FlxG.mouse.visible = true;
 
+		// Background code
+
 		bg = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("backgrounds/menuDesat"));
 		bg.screenCenter();
 		add(bg);
+
+		if (bgImage == 1) {
+    		bg.loadGraphic(Paths.image("backgrounds/menuDesat"));
+		}
+
+		if (bgImage == 2) {
+    		bg.loadGraphic(Paths.image("backgrounds/menuBG"));
+		}
+
+		if (bgImage == 3) {
+    		bg.loadGraphic(Paths.image("backgrounds/menuBGMagenta"));
+		}
+
+		if (bgImage == 4) {
+    		bg.loadGraphic(Paths.image("backgrounds/menuBGBlue"));
+		}
 
 		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG"));
 		charactersBG.setPosition(0, FlxG.height - charactersBG.height);
@@ -42,7 +61,7 @@ class MainMenuStateNew extends MusicBeatState
 		charactersBG_2.setPosition(charactersBG.width, FlxG.height - charactersBG_2.height);
 		add(charactersBG_2);
 
-		//
+		// Buttons code
 
 		storyMode_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("go"));
 		storyMode_button.setPosition(0, 200);
