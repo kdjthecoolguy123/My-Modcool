@@ -1,4 +1,4 @@
-package source.states.stages;
+package states;
 
 import flixel.FlxObject;
 import flixel.FlxSprite;
@@ -8,7 +8,7 @@ import flixel.text.FlxText;
 import flixel.math.FlxPoint;
 import lime.app.Application;
 
-class StoryMenuState extends MusicBeatState
+class ChapterSelect extends MusicBeatState
 {
     var bg:FlxSprite;
 

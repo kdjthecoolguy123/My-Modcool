@@ -8,6 +8,7 @@ import flixel.text.FlxText;
 import flixel.math.FlxPoint;
 import lime.app.Application;
 import states.editors.MasterEditorMenu;
+import states.ChapterSelect;	
 import options.OptionsState;
 
 class MainMenuStateNew extends MusicBeatState
