@@ -54,23 +54,23 @@ class MainMenuStateNew extends MusicBeatState
     		bg.loadGraphic(Paths.image("backgrounds/menuBGBlue"));
 		}
 
-		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/buttonPlaceholder"));
+		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG"));
 		charactersBG.antialiasing = ClientPrefs.data.antialiasing;
 		charactersBG.setPosition(0, FlxG.height - charactersBG.height);
 		add(charactersBG);
 
-		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/buttonPlaceholder"));
+		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG_2"));
 		charactersBG_2.antialiasing = ClientPrefs.data.antialiasing;
 		charactersBG_2.setPosition(charactersBG.width, FlxG.height - charactersBG_2.height);
 		add(charactersBG_2);
 
 		// Buttons code
 
-		storyMode_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("go"));
+		storyMode_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/buttonPlaceholder"));
 		storyMode_button.setPosition(0, 200);
 		add(storyMode_button);
 
-		freeplay_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("go"));
+		freeplay_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/buttonPlaceholder"));
 		freeplay_button.setPosition(500, 200);
 		add(freeplay_button);
 
