@@ -28,6 +28,7 @@ typedef TitleData =
 	var gfy:Float;
 	var backgroundSprite:String;
 	var bpm:Float;
+	public var characterSpeed:Float = 35;
 	
 	@:optional var animation:String;
 	@:optional var dance_left:Array<Int>;

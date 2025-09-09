@@ -18,7 +18,6 @@ class MainMenuStateNew extends MusicBeatState
 	var bg:FlxSprite;
 	var charactersBG:FlxSprite;
 	var charactersBG_2:FlxSprite;
-	var characterSpeed:Float = 35;
 
 	var storyMode_button:FlxSprite;
 	var freeplay_button:FlxSprite;
