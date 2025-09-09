@@ -50,28 +50,27 @@ class ChapterSelect extends MusicBeatState
 
         chapter1_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("storymenu/chapterPlaceholder"));
 	    chapter1_button.screenCenter(Y);
-        chapter1_button.x = 100;
+        chapter1_button.x = 150;
 	    add(chapter1_button);
 
         chapter2_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("storymenu/chapterPlaceholder"));
-	    chapter2_button.screenCenter(Y);
-        chapter2_button.x = 100 + chapterButtonsDistance;
+	    chapter2_button.screenCenter(XY);
 	    add(chapter2_button);
 
         chapter3_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("storymenu/chapterPlaceholder"));
 	    chapter3_button.screenCenter(Y);
-        chapter3_button.x = 100 + (chapterButtonsDistance * 2);
+        chapter3_button.x = FlxG.width - 150 - chapter2_button.width;
 	    add(chapter3_button);
 
         //
         
         var blackBox = new FlxSprite(0, 0);
-        blackBox.makeGraphic(FlxG.width, 100, FlxColor.BLACK);
+        blackBox.makeGraphic(FlxG.width, 50, FlxColor.BLACK);
         blackBox.alpha = 0.6;
         add(blackBox);
 
         var instructions:FlxText = new FlxText(0, 6, 0, "Selected a Chapter with your mouse!", 12);
-		instructions.setFormat(Paths.font("vcr.ttf"), 64, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		instructions.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
         instructions.screenCenter(X);
 		add(instructions);
         

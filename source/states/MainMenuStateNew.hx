@@ -54,12 +54,12 @@ class MainMenuStateNew extends MusicBeatState
     		bg.loadGraphic(Paths.image("backgrounds/menuBGBlue"));
 		}
 
-		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG"));
+		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/buttonPlaceholder"));
 		charactersBG.antialiasing = ClientPrefs.data.antialiasing;
 		charactersBG.setPosition(0, FlxG.height - charactersBG.height);
 		add(charactersBG);
 
-		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG_2"));
+		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/buttonPlaceholder"));
 		charactersBG_2.antialiasing = ClientPrefs.data.antialiasing;
 		charactersBG_2.setPosition(charactersBG.width, FlxG.height - charactersBG_2.height);
 		add(charactersBG_2);
@@ -74,7 +74,7 @@ class MainMenuStateNew extends MusicBeatState
 		freeplay_button.setPosition(500, 200);
 		add(freeplay_button);
 
-		var crazyFunkersVer:FlxText = new FlxText(6, FlxG.height - 6, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
+		var crazyFunkersVer:FlxText = new FlxText(6, FlxG.height - 22, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
 		crazyFunkersVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(crazyFunkersVer);
 
