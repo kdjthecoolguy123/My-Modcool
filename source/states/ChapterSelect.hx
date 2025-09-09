@@ -57,7 +57,7 @@ class ChapterSelect extends MusicBeatState
 
         var instructions:FlxText = new FlxText(0, 6, 0, "Selected a Chapter with your mouse!", 26);
 		instructions.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-        instructions.sceenCenter(X);
+        instructions.screenCenter(X);
 		add(instructions);
         
     }
