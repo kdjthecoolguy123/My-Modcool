@@ -71,7 +71,7 @@ class MainMenuStateNew extends MusicBeatState
 		freeplay_button.setPosition(500, 200);
 		add(freeplay_button);
 
-		var crazyFunkersVer:FlxText = new FlxText(12, FlxG.height - 44, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
+		var crazyFunkersVer:FlxText = new FlxText(6, FlxG.height - 6, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
 		crazyFunkersVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(crazyFunkersVer);
 
@@ -114,6 +114,10 @@ class MainMenuStateNew extends MusicBeatState
 			});
     		
 		}
+
+		if (controls.BACK).pressed {
+            MusicBeatState.switchState(new TitleState());
+        }
 		
 	}
 	 
