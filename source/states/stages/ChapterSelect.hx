@@ -21,7 +21,7 @@ class StoryMenuState extends MusicBeatState
 
     override function create() {
 
-        bg = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("menuDesat"));
+        bg = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("backgrounds/menuDesat"));
 	    bg.screenCenter();
 	    add(bg);
 
