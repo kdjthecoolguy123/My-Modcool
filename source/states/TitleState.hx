@@ -28,7 +28,6 @@ typedef TitleData =
 	var gfy:Float;
 	var backgroundSprite:String;
 	var bpm:Float;
-	public var characterSpeed:Float = 35;
 	
 	@:optional var animation:String;
 	@:optional var dance_left:Array<Int>;
@@ -114,6 +113,7 @@ class TitleState extends MusicBeatState
 
 	var charactersBG:FlxSprite;
 	var charactersBG_2:FlxSprite;
+	var characterSpeed:Float = 35;
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
@@ -333,7 +333,7 @@ class TitleState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-
+		
 		charactersBG.x -= characterSpeed * elapsed;
 		charactersBG_2.x -= characterSpeed * elapsed;
 
@@ -344,8 +344,6 @@ class TitleState extends MusicBeatState
 		if (charactersBG_2.x + charactersBG_2.width <= 0) {
     		charactersBG_2.x = charactersBG.x + charactersBG.width;
 		}
-
-		//
 
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
