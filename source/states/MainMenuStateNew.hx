@@ -51,7 +51,7 @@ class MainMenuStateNew extends TitleState
 		add(freeplay_button);
 
 		var crazyFunkersVer:FlxText = new FlxText(12, FlxG.height - 44, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
-		crazyFunkersVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK)
+		crazyFunkersVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(crazyFunkersVer);
 
     }
