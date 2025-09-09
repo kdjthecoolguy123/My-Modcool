@@ -50,7 +50,7 @@ class ChapterSelect extends MusicBeatState
 
         chapter1_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("storymenu/chapterPlaceholder"));
 	    chapter1_button.screenCenter(Y);
-        chapter1_button.x = 100
+        chapter1_button.x = 100;
 	    add(chapter1_button);
 
         chapter2_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("storymenu/chapterPlaceholder"));
