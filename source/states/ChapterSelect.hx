@@ -65,7 +65,7 @@ class ChapterSelect extends MusicBeatState
     override function update(elapsed: Float) {
 		super.update(elapsed);
 
-        if (controls.BACK).pressed {
+        if (controls.BACK) {
             MusicBeatState.switchState(new MainMenuStateNew());
         }
    

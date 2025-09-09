@@ -115,7 +115,7 @@ class MainMenuStateNew extends MusicBeatState
     		
 		}
 
-		if (controls.BACK).pressed {
+		if (controls.BACK) {
             MusicBeatState.switchState(new TitleState());
         }
 		
