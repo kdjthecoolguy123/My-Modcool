@@ -111,6 +111,8 @@ class TitleState extends MusicBeatState
 		#end
 	}
 
+	var charactersBG:FlxSprite;
+	var charactersBG_2:FlxSprite;
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
@@ -126,6 +128,14 @@ class TitleState extends MusicBeatState
 		loadJsonData();
 		#if TITLE_SCREEN_EASTER_EGG easterEggData(); #end
 		Conductor.bpm = musicBPM;
+
+		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG"));
+		charactersBG.setPosition(0, FlxG.height - charactersBG.height);
+		add(charactersBG);
+
+		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG_2"));
+		charactersBG_2.setPosition(charactersBG.width, FlxG.height - charactersBG_2.height);
+		add(charactersBG_2);
 
 		logoBl = new FlxSprite(logoPosition.x, logoPosition.y);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
@@ -322,6 +332,20 @@ class TitleState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+
+		charactersBG.x -= characterSpeed * elapsed;
+		charactersBG_2.x -= characterSpeed * elapsed;
+
+		if (charactersBG.x + charactersBG.width <= 0) {
+    		charactersBG.x = charactersBG_2.x + charactersBG_2.width;
+		}
+
+		if (charactersBG_2.x + charactersBG_2.width <= 0) {
+    		charactersBG_2.x = charactersBG.x + charactersBG.width;
+		}
+
+		//
+
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
