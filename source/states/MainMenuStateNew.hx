@@ -51,7 +51,7 @@ class MainMenuStateNew extends TitleState
 		freeplay_button.setPosition(500, 200);
 		add(freeplay_button);
 
-		var fnfVer:FlxText = new FlxText(12, FlxG.height, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
+		var fnfVer:FlxText = new FlxText(12, FlxG.height - fnfVer.height, 0, "Crazy Funker's " + updateVer + " [Developer Build]", 12);
 		add(fnfVer);
 
     }
@@ -76,7 +76,7 @@ class MainMenuStateNew extends TitleState
 
 		if (FlxG.mouse.justPressed && storyMode_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
 			FlxG.sound.play(Paths.sound("confirmMenu"));
-			FlxFlicker.flicker(storyMode_button, 1.1, 0.15, true, function(_) {
+			FlxFlicker.flicker(storyMode_button, 1.1, 0.04, true, function(_) {
 				MusicBeatState.switchState(new StoryMenuState());
 			});
 
@@ -85,7 +85,7 @@ class MainMenuStateNew extends TitleState
 		if (FlxG.mouse.justPressed && freeplay_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
 			FlxG.mouse.visible = false;
 			FlxG.sound.play(Paths.sound("confirmMenu"));
-			FlxFlicker.flicker(freeplay_button, 1.1, 0.15, true, function(_) {
+			FlxFlicker.flicker(freeplay_button, 1.1, 0.04, true, function(_) {
 				MusicBeatState.switchState(new FreeplayState());
 			});
     		
