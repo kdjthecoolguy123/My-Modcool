@@ -79,7 +79,7 @@ class ChapterSelect extends MusicBeatState
     override function update(elapsed: Float) {
 		super.update(elapsed);
 
-        if (controls.BACK) {
+        if (!selected && controls.BACK) {
             FlxG.sound.play(Paths.sound("cancelmenu"));
             MusicBeatState.switchState(new MainMenuStateNew());
         }
