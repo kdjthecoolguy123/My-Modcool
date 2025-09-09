@@ -16,7 +16,8 @@ class ChapterSelect extends MusicBeatState
     var chapter1_button:FlxSprite;
     var chapter2_button:FlxSprite; 
     var chapter3_button:FlxSprite;
-    var chapter4_button:FlxSprite;
+    var chapterButtonsDistance:Int = 150;
+    var selected:Bool = false;
     var chapterSelect:Int = 0;
 
 
@@ -45,9 +46,22 @@ class ChapterSelect extends MusicBeatState
     		bg.loadGraphic(Paths.image("backgrounds/menuBGBlue"));
 		}
 
+        //
+
         chapter1_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("storymenu/chapterPlaceholder"));
-	    chapter1_button.screenCenter();
+	    chapter1_button.screenCenter(Y);
+        chapter1_button.x = 100
 	    add(chapter1_button);
+
+        chapter2_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("storymenu/chapterPlaceholder"));
+	    chapter2_button.screenCenter(Y);
+        chapter2_button.x = 100 + chapterButtonsDistance;
+	    add(chapter2_button);
+
+        chapter3_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("storymenu/chapterPlaceholder"));
+	    chapter3_button.screenCenter(Y);
+        chapter3_button.x = 100 + (chapterButtonsDistance * 2);
+	    add(chapter3_button);
 
         //
         
@@ -56,8 +70,8 @@ class ChapterSelect extends MusicBeatState
         blackBox.alpha = 0.6;
         add(blackBox);
 
-        var instructions:FlxText = new FlxText(0, 6, 0, "Selected a Chapter with your mouse!", 70);
-		instructions.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+        var instructions:FlxText = new FlxText(0, 6, 0, "Selected a Chapter with your mouse!", 12);
+		instructions.setFormat(Paths.font("vcr.ttf"), 64, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
         instructions.screenCenter(X);
 		add(instructions);
         
@@ -67,8 +81,36 @@ class ChapterSelect extends MusicBeatState
 		super.update(elapsed);
 
         if (controls.BACK) {
+            FlxG.sound.play(Paths.sound("cancelmenu"));
             MusicBeatState.switchState(new MainMenuStateNew());
         }
+
+        if (!selected && FlxG.mouse.justPressed && chapter1_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
+			selected = true;
+			FlxG.mouse.visible = false;
+			FlxG.sound.play(Paths.sound("confirmMenu"));
+			FlxFlicker.flicker(chapter1_button, 1.1, 0.04, true, function(_) {
+			MusicBeatState.switchState(new StoryMenuState());
+			});
+		}
+
+        if (!selected && FlxG.mouse.justPressed && chapter2_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
+			selected = true;
+			FlxG.mouse.visible = false;
+			FlxG.sound.play(Paths.sound("confirmMenu"));
+			FlxFlicker.flicker(chapter2_button, 1.1, 0.04, true, function(_) {
+			MusicBeatState.switchState(new StoryMenuState());
+			});
+		}
+
+        if (!selected && FlxG.mouse.justPressed && chapter3_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
+			selected = true;
+			FlxG.mouse.visible = false;
+			FlxG.sound.play(Paths.sound("confirmMenu"));
+			FlxFlicker.flicker(chapter3_button, 1.1, 0.04, true, function(_) {
+			MusicBeatState.switchState(new StoryMenuState());
+			});
+		}
    
     }
 

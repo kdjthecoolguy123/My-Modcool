@@ -119,6 +119,7 @@ class MainMenuStateNew extends MusicBeatState
 		}
 
 		if (controls.BACK) {
+			FlxG.sound.play(Paths.sound("cancelmenu"));
             MusicBeatState.switchState(new TitleState());
         }
 		
