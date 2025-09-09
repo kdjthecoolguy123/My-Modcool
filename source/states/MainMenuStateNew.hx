@@ -10,17 +10,18 @@ import lime.app.Application;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
 
-class MainMenuStateNew extends TitleState
+class MainMenuStateNew extends MusicBeatState
 {
 	public static var updateVer:String = "1.5";
 
-	var background:FlxSprite;
+	var bg:FlxSprite;
 	var charactersBG:FlxSprite;
 	var charactersBG_2:FlxSprite;
 	var characterSpeed:Float = 35;
 
 	var storyMode_button:FlxSprite;
 	var freeplay_button:FlxSprite;
+	var selected:Bool = false;
 
 	var allowMouse:Bool = true;
 
@@ -28,9 +29,9 @@ class MainMenuStateNew extends TitleState
 
 		FlxG.mouse.visible = true;
 
-		background = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("menuBG"));
-		background.screenCenter();
-		add(background);
+		bg = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("menuDesat"));
+		bg.screenCenter();
+		add(bg);
 
 		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG"));
 		charactersBG.setPosition(0, FlxG.height - charactersBG.height);
@@ -74,15 +75,18 @@ class MainMenuStateNew extends TitleState
 
 		// buttons here
 
-		if (FlxG.mouse.justPressed && storyMode_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
+		if (!selected && FlxG.mouse.justPressed && storyMode_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
+			selected = true;
+			FlxG.mouse.visible = false;
 			FlxG.sound.play(Paths.sound("confirmMenu"));
 			FlxFlicker.flicker(storyMode_button, 1.1, 0.04, true, function(_) {
-				MusicBeatState.switchState(new StoryMenuState());
+				MusicBeatState.switchState(new ChapterSelect());
 			});
 
 		}
 
-		if (FlxG.mouse.justPressed && freeplay_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
+		if (!selected && FlxG.mouse.justPressed && freeplay_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
+			selected = true;
 			FlxG.mouse.visible = false;
 			FlxG.sound.play(Paths.sound("confirmMenu"));
 			FlxFlicker.flicker(freeplay_button, 1.1, 0.04, true, function(_) {
