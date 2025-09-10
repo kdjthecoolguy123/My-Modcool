@@ -12,6 +12,10 @@ class ChapterSelect extends MusicBeatState
 {
     var bg:FlxSprite;
     var bgImage:Int = FlxG.random.int(1, 4);
+	var charactersBG:FlxSprite;
+	var charactersBG_2:FlxSprite;
+	var characterSpeed:Float = 35;
+	var characterAlpha:Float = 0.4;	
 
     var chapter1_button:FlxSprite;
     var chapter2_button:FlxSprite; 
@@ -46,6 +50,18 @@ class ChapterSelect extends MusicBeatState
     		bg.loadGraphic(Paths.image("backgrounds/menuBGBlue"));
 		}
 
+		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG"));
+		charactersBG.antialiasing = ClientPrefs.data.antialiasing;
+		charactersBG.setPosition(0, FlxG.height - charactersBG.height);
+		charactersBG.alpha = characterAlpha;
+		add(charactersBG);
+
+		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG_2"));
+		charactersBG_2.antialiasing = ClientPrefs.data.antialiasing;
+		charactersBG_2.setPosition(charactersBG.width, FlxG.height - charactersBG_2.height);
+		charactersBG_2.alpha = characterAlpha;
+		add(charactersBG_2);
+
         //
 
         chapter1_button = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("storymenu/chapterPlaceholder"));
@@ -79,10 +95,16 @@ class ChapterSelect extends MusicBeatState
     override function update(elapsed: Float) {
 		super.update(elapsed);
 
-        if (!selected && controls.BACK) {
-            FlxG.sound.play(Paths.sound("cancelmenu"));
-            MusicBeatState.switchState(new MainMenuStateNew());
-        }
+		charactersBG.x -= characterSpeed * elapsed;
+		charactersBG_2.x -= characterSpeed * elapsed;
+
+		if (charactersBG.x + charactersBG.width <= 0) {
+    		charactersBG.x = charactersBG_2.x + charactersBG_2.width;
+		}
+
+		if (charactersBG_2.x + charactersBG_2.width <= 0) {
+    		charactersBG_2.x = charactersBG.x + charactersBG.width;
+		}
 
         if (!selected && FlxG.mouse.justPressed && chapter1_button.overlapsPoint(new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY), true)) {
 			selected = true;
@@ -110,6 +132,11 @@ class ChapterSelect extends MusicBeatState
 			MusicBeatState.switchState(new StoryMenuState());
 			});
 		}
+
+	    if (!selected && controls.BACK) {
+            FlxG.sound.play(Paths.sound("cancelmenu"));
+            MusicBeatState.switchState(new MainMenuStateNew());
+        }
    
     }
 

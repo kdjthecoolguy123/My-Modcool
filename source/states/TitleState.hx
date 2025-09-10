@@ -114,6 +114,7 @@ class TitleState extends MusicBeatState
 	var charactersBG:FlxSprite;
 	var charactersBG_2:FlxSprite;
 	var characterSpeed:Float = 35;
+	var characterAlpha:Float = 0.4;	
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
@@ -131,11 +132,15 @@ class TitleState extends MusicBeatState
 		Conductor.bpm = musicBPM;
 
 		charactersBG = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG"));
+		charactersBG.antialiasing = ClientPrefs.data.antialiasing;
 		charactersBG.setPosition(0, FlxG.height - charactersBG.height);
+		charactersBG.alpha = characterAlpha;
 		add(charactersBG);
 
 		charactersBG_2 = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image("mainmenu/charactersBG_2"));
+		charactersBG_2.antialiasing = ClientPrefs.data.antialiasing;
 		charactersBG_2.setPosition(charactersBG.width, FlxG.height - charactersBG_2.height);
+		charactersBG_2.alpha = characterAlpha;
 		add(charactersBG_2);
 
 		logoBl = new FlxSprite(logoPosition.x, logoPosition.y);
